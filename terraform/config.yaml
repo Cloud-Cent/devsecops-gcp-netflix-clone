@@ -1,0 +1,26 @@
+global:
+  region: "asia-south1"
+  state_bucket: "nasir-spanner-reverse-replication-tf-state"
+  project_id: "nasir-438710"
+
+network:
+  vpc_name: "dataflow" 
+  auto_create_subnetworks: false
+  description: "dataflow"
+  subnet_name: "reverse-repliation"
+  subnet_ip: "10.0.0.0/16"
+  subnet_description: "reverse-repliation"
+
+dataflow-bucket:
+  name: "nasir-dataflow-templates" 
+
+pubsub:
+  topic: "spanner-reverse-replication"   
+  sub: "spanner-reverse-replication-sub"
+
+spanner:
+  name: "spanner-reverse-replication"  
+  display_name: "Spanner Reverse Replication"
+  num_nodes: 1
+  edition: "STANDARD"
+  config: "regional-asia-south1"
